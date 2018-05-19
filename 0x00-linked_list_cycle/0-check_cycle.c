@@ -23,7 +23,7 @@ int check_cycle(listint_t *list)
 
 	while (slow != NULL || fast != NULL)
 	{
-		if (slow == fast && first_flag == 1)
+		if ((slow == fast && first_flag == 1) || fast->next == slow)
 			return (1);
 
 		first_flag = 1;
