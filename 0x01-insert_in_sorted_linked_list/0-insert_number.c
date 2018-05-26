@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
  * insert_node - inserts a number into
@@ -22,7 +21,7 @@ listint_t *insert_node(listint_t **head, int number)
 		return (NULL);
 
 	new_node->n = number;
-	new_node->next = NULL;
+	new_node->next = *head;
 
 	if (*head == NULL)
 	{
@@ -46,7 +45,7 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		if (tmp->next)
 		{
-			if (number >= tmp->n && number < tmp->next->n)
+			if (number > tmp->n && number <= tmp->next->n)
 			{
 				new_node->next = tmp->next;
 				tmp->next = new_node;
