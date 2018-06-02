@@ -20,7 +20,6 @@ int is_palindrome(listint_t **head)
 		add_node_begin(&head_2, tmp->n);
 		tmp = tmp->next;
 	}
-	print_listint(head_2);
 	return (check_lists(head, &head_2));
 }
 
