@@ -12,6 +12,9 @@ int is_palindrome(listint_t **head)
 	listint_t *tmp;
 	listint_t *head_2;
 
+	if (*head == NULL)
+		return (1);
+
 	tmp = *head;
 	head_2 = NULL;
 
